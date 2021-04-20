@@ -10,14 +10,11 @@ import java.util.Random;
 @Service
 public class ChuckNorrisJokeService {
 
-    private final JokeRepository jokeRepository;
-
     private List<ChuckNorrisJoke> allJokes;
 
     private Random random;
 
     public ChuckNorrisJokeService(JokeRepository jokeRepository) {
-        this.jokeRepository = jokeRepository;
         this.allJokes = (List<ChuckNorrisJoke>) jokeRepository.findAll();
         this.random = new Random();
     }
